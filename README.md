@@ -1,8 +1,8 @@
 # Semantic Search with Qdrant
 
-A Python semantic-search app: text → **Sentence-Transformer embeddings** (all-MiniLM-L6-v2,
-384-dim) → stored in **Qdrant** with metadata → **cosine similarity** search returning Top-K
-results. Includes metadata filtering and PDF document search.
+Keyword search fails when a query and a document mean the same thing but don't share words (e.g. "car" vs. "automobile", or a natural-language question vs. a technical passage that answers it). This project solves that with vector search: text -> Sentence-Transformer embeddings (all-MiniLM-L6-v2, 384-dim) -> stored in Qdrant with metadata -> cosine similarity search returning Top-K results. Includes metadata filtering and PDF document search.
+
+The demo corpus (documents.py) spans 14 documents across 7 categories -- space, cooking, finance, health, technology, sports, and nature. A query like "What helps flowering plants reproduce?" surfaces the corpus's bee-pollination document even though the query shares almost no exact words with it -- the match comes from meaning, not keyword overlap. Run python 02_search.py "your query" to see this against the real corpus with actual similarity scores.
 
 ## 1. Run Qdrant (Docker)
 
