@@ -1,0 +1,11 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+.Python
+
+# Generated sample (recreated by 04_pdf_search.py)
+data/sample.pdf
+
+# OS
+.DS_Store
